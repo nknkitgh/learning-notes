@@ -1,0 +1,49 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #87CEEB;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.weather-info {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.temperature {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.temp-high-low {
+    margin-top: 10px;
+}
+
+.high-temp, .low-temp {
+    margin-top: 10px;
+}
+
+.weekly-forecast {
+    margin-top: 20px;
+}
+
+.weekly-forecast div {
+    margin: 5px 0;
+}
