@@ -3,174 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO管理アプリ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .task-input {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .add-task-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .add-task-btn:hover {
-            background-color: #218838;
-        }
-        .task-list {
-            list-style: none;
-            padding: 0;
-        }
-        .task-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 5px;
-            background-color: #f9f9f9;
-        }
-        .task-list li .task-name {
-            flex-grow: 1;
-            margin-right: 10px;
-            cursor: pointer;
-        }
-        .delete-btn {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            padding: 5px 10px;
-        }
-        .delete-btn:hover {
-            background-color: #c82333;
-        }
-    </style>
+    <title>レシピ検索アプリ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>TODO管理アプリ</h1>
-        <input type="text" id="taskInput" class="task-input" placeholder="新しいタスクを追加">
-        <button id="addTaskBtn" class="add-task-btn">追加</button>
-        <ul id="taskList" class="task-list"></ul>
-    </div>
-
-    <script>
-        document.getElementById('addTaskBtn').addEventListener('click', addTask);
-        document.addEventListener('DOMContentLoaded', loadTasks);
-
-        function addTask() {
-            const taskInput = document.getElementById('taskInput');
-            if (taskInput.value.trim() === '') {
-                alert('タスクを入力してください。');
-                return;
-            }
-            const task = taskInput.value;
-            createTaskElement(task);
-            saveTask(task);
-            taskInput.value = '';
-        }
-
-        function createTaskElement(task) {
-            const taskList = document.getElementById('taskList');
-            const li = document.createElement('li');
-            const span = document.createElement('span');
-            span.textContent = task;
-            span.classList.add('task-name');
-            span.addEventListener('click', function() {
-                editTask(span);
-            });
-
-            const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = '削除';
-            deleteBtn.classList.add('delete-btn');
-            deleteBtn.addEventListener('click', function() {
-                taskList.removeChild(li);
-                removeTask(task);
-            });
-
-            li.appendChild(span);
-            li.appendChild(deleteBtn);
-            taskList.appendChild(li);
-        }
-
-        function editTask(taskElement) {
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.value = taskElement.textContent;
-            input.classList.add('task-input');
-            input.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    const oldTask = taskElement.textContent;
-                    const newTask = input.value;
-                    taskElement.textContent = newTask;
-                    taskElement.style.display = 'inline';
-                    input.remove();
-                    updateTask(oldTask, newTask);
-                }
-            });
-            taskElement.style.display = 'none';
-            taskElement.parentNode.insertBefore(input, taskElement);
-            input.focus();
-        }
-
-        function saveTask(task) {
-            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            tasks.push(task);
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-        }
-
-        function removeTask(task) {
-            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            tasks = tasks.filter(t => t !== task);
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-        }
-
-        function updateTask(oldTask, newTask) {
-            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            const index = tasks.indexOf(oldTask);
-            if (index !== -1) {
-                tasks[index] = newTask;
-                localStorage.setItem('tasks', JSON.stringify(tasks));
-            }
-        }
-
-        function loadTasks() {
-            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            tasks.forEach(task => {
-                createTaskElement(task);
-            });
-        }
-    </script>
+    <header>
+        <h1>レシピ検索アプリ</h1>
+    </header>
+    <main>
+        <section id="categories">
+            <h2>カテゴリ</h2>
+            <div id="category-tags"></div>
+        </section>
+        <section id="recipes">
+            <h2>レシピ一覧</h2>
+            <div id="recipe-list"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
