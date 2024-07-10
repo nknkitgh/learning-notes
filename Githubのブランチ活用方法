@@ -1,0 +1,90 @@
+ブランチの使い方と活用方法
+1. ポートフォリオ用レポジトリ (portfolio-projects)
+メインブランチ (main or master)
+用途: 安定したリリース版のコードを保持
+活用方法: 完成したプロジェクトやテスト済みのコードのみをマージ
+
+機能開発ブランチ (feature branches)
+用途: 新しい機能や改良を追加するためのブランチ
+命名例: feature/add-login, feature/update-UI
+活用方法:
+新しい機能や大規模な改良を追加する際に作成
+開発が完了し、テストが済んだらメインブランチにマージ
+
+バグ修正ブランチ (bugfix branches)
+用途: バグ修正のためのブランチ
+命名例: bugfix/fix-login-error, bugfix/resolve-ui-issue
+活用方法:
+発見されたバグを修正する際に作成
+修正が完了し、テストが済んだらメインブランチにマージ
+
+実験用ブランチ (experimental branches)
+用途: 実験的な機能やアイデアを試すためのブランチ
+命名例: experimental/new-algorithm
+活用方法:
+新しいアイデアや技術を試すために作成
+実験が成功したら機能開発ブランチにマージ、失敗したら削除
+
+2. 学びの記録用レポジトリ (learning-notes)
+メインブランチ (main or master)
+用途: 学びの記録やメモの安定版を保持
+活用方法: 重要なメモや整理済みの学習内容のみをマージ
+
+日次ログブランチ (daily-log branches)
+用途: 日々の学習内容やメモを記録するためのブランチ
+命名例: daily-log/2023-07-10, daily-log/2023-07-11
+活用方法:
+日々の学習内容を記録するために作成
+一定期間ごと（例：週末）にメインブランチにマージし、ブランチを削除
+
+トピック別ブランチ (topic branches)
+用途: 特定のトピックやテーマに関する深い学びを記録するためのブランチ
+命名例: topic/machine-learning, topic/web-development
+活用方法:
+特定のトピックについて集中的に学ぶ際に作成
+学びが完了し、メモが整理できたらメインブランチにマージ
+
+ブランチの使い方の具体例
+例1: 新しいログイン機能の追加
+ブランチ作成
+git checkout -b feature/add-login
+
+コードの変更
+ログイン機能のコードを追加
+コミットとプッシュ
+git add .
+git commit -m "Add login feature"
+git push origin feature/add-login
+
+プルリクエスト作成
+GitHub上でプルリクエストを作成し、レビューを依頼
+
+マージ
+レビューが完了し、問題がなければメインブランチにマージ
+
+ブランチ削除
+git branch -d feature/add-login
+
+例2: 日々の学習内容の記録
+ブランチ作成
+git checkout -b daily-log/2023-07-10
+
+メモの追加
+日々の学習内容を記録
+
+コミットとプッシュ
+git add .
+git commit -m "Add daily log for 2023-07-10"
+git push origin daily-log/2023-07-10
+
+メインブランチにマージ
+git checkout main
+git merge daily-log/2023-07-10
+git push origin main
+
+ブランチ削除
+git branch -d daily-log/2023-07-10
+
+最後に
+ブランチをうまく活用することで、コードの管理が容易になり、開発や学習の効率が向上します。
+上記の方法を参考に、プロジェクトの規模や目的に応じて適切にブランチを使い分けてください
