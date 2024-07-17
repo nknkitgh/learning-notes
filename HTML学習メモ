@@ -52,3 +52,9 @@
     <a href="#LocalLink">自サイト内のリンク</a>
 
   <a href="http://www.yyy.zzz/aaa.html#Link">ジャンプ</a>
+
+ターゲット指定
+<a target="_blank" href="http://www.yyy.zzz/aaa/bbb/ccc.html">ページ</a>  //別ウィンドウで表示
+  
+  _blank	常に名前無しのウィンドウを新規に開いて、そこに表示します。
+  _self	自分自身のウィンドウ(フレーム)に表示します。（現在のページに表示）
