@@ -40,7 +40,7 @@
   数字付きリストは <ol>～</ol> と <li> を用います。  //Ordered List(順序のあるリスト)の略、List Item の略
   用語と用語の説明リストを記述するには <dl>～</dl> と <dt> と <dd> を用います。  //Definition List(定義リスト)の略、Definition Term(定義語)の略、Definition Description(定義の説明)
 
-リンクを貼るには
+■リンクを貼るには
 <a href="xxx">～</a> //「anchor」（アンカー）の略、「Hypertext REFerence」（ハイパーテキスト参照）の略
 
 他サイトへのリンク
@@ -58,3 +58,9 @@
   
   _blank	常に名前無しのウィンドウを新規に開いて、そこに表示します。
   _self	自分自身のウィンドウ(フレーム)に表示します。（現在のページに表示）
+
+■画像を貼るには
+<img src="panda.gif" width=100 height=100 alt="パンダ">　// srcは「source」（ソース）の略、altは「alternative text」（代替テキスト）の略
+
+画像ファイルをリンクボタンにすることもできます。
+  <a href="xx.htm"><img src="xx.gif" width=88 height=31 alt="説明"></a>
