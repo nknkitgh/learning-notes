@@ -39,3 +39,16 @@
   数字無しのリスト書きには <ul>～</ul> と <li> を用います。  //Unordered List(順序の無いリスト)の略、List Item の略
   数字付きリストは <ol>～</ol> と <li> を用います。  //Ordered List(順序のあるリスト)の略、List Item の略
   用語と用語の説明リストを記述するには <dl>～</dl> と <dt> と <dd> を用います。  //Definition List(定義リスト)の略、Definition Term(定義語)の略、Definition Description(定義の説明)
+
+リンクを貼るには
+<a href="xxx">～</a> //「anchor」（アンカー）の略、「Hypertext REFerence」（ハイパーテキスト参照）の略
+
+他サイトへのリンク
+  <a href="http://www.yahoo.co.jp/">Yahoo!</a>
+自サイトへのリンク
+  <a href="http://www.yyy.zzz/aaa/bbb/ccc.html">ページ</a>
+ページ中の特定場所へのジャンプ  //あらかじめジャンプ先の個所に id 属性で名前をつけておきます。「#id名」でジャンプ。サイトや他フォルダ、他ファイルの特定個所へのリンクは「#link」をURL末尾に追記。
+  <h4 id="LocalLink">自サイト内のリンク</h4>
+    <a href="#LocalLink">自サイト内のリンク</a>
+
+  <a href="http://www.yyy.zzz/aaa.html#Link">ジャンプ</a>
