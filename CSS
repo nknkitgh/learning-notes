@@ -1,0 +1,82 @@
+■CSSとは？
+CSS は Cascading Style Sheets の略。HTMLで記述された Webページの見栄え・スタイルを効率的に定義するための技術。
+
+■CSSの指定方法
+◆ style属性で指定する方法
+⇒タグにstyle属性を用いて指定
+
+<h1 style="color:red; font-size: 24pt;">CSSとは</h1>
+
+◆ <style>～</style>で指定する方法
+⇒文書全体のスタイルを指定
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CSSのテスト</title>
+    <style>
+    h1 { color: red; }
+    </style>
+  </head>
+  <body>
+    <h1>CSSとは</h1>
+    <p>CSSはCascading Style Sheetsの略で・・・</p>
+  </body>
+</html>
+
+◆ <link>を用いた外部CSSファイルで指定する方法
+⇒<link> タグにより、外部CSSファイルを読み込むことができます。外部CSSファイルを用いることで、複数の HTML文書で共通のCSSを共有することができます。
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>CSSのテスト</title>
+  </head>
+  <body>
+    <h1>CSSとは</h1>
+    <p>CSSはCascading Style Sheetsの略で・・・</p>
+  </body>
+</html>
+
+■タグと要素とセレクタ
+〇<h1>～</h1> で囲まれた部分を　h1要素(element)
+〇<h1>～</h1> の ～ の部分を　h1要素のコンテンツ(content)
+〇<h1>～</h1> の <h1> の部分を　h1要素の開始タグ(start tag)
+〇<h1>～</h1> の </h1> の部分を　h1要素の終了タグ(end tag)
+〇h1 { color: red; } の h1 の部分を　セレクタ(selector)
+〇h1 { color: red; } の color:red; の部分を　宣言(declaration)
+〇h1 { color: red; } の color の部分を　属性(property)
+〇h1 { color: red; } の red の部分を　値(value)
+
+<html>
+  <head>
+    <title>～</title>
+    <style>
+      h1 { color: red; }
+    </style>
+  </head>
+  <body>
+    <h1 style="color:red; font-size: 24pt;">CSSとは</h1>
+      <p>～</p>
+  </body>
+</html>
+
+■継承
+親要素に指定されたスタイルの多くは、子要素に継承されます。
+例えば、h1 { color: red; } と定義されている時、親要素である h1要素の color属性は、子要素である em要素に継承され、「いいい」の部分も赤くなります。
+
+<h1>あああ<em>いいい</em>ううう</h1>
+
+■セレクタ
+セレクタには、スタイルを適用する対象となる要素を指定します。要素の指定は様々な方法があります。
+
+h1 { color: red; }			/* h1要素に対して指定 */
+h1, h2 { color: red; }			/* h1 と h2要素に対して指定 */
+ul li { color: red; }			/* <ul>～</ul> の中にある li要素に対して指定 */
+.sample { color: red; }			/* class="sample" を持つ要素に対して指定 */
+#sample { color: red; }			/* id="sample" を持つ要素に対して指定 */
+h1.sample { color: red; }		/* class="sample" を持つ div要素に対して指定 */
+a:link { color: red; }			/* <a href="..."> のリンク(未訪問)に対して指定 */
