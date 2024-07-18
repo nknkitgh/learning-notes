@@ -1,0 +1,64 @@
+■型
+未定義(undefined)	undefined	未定義値。
+ヌル(null)	null	ヌル値。
+真偽値(boolean)	true, false	真偽値。
+文字列(string)	"abc..."	文字列。
+数値(number)	123, 123.45, 1.23e45, NaN	数値。
+オブジェクト(object)	var o = new Object()	オブジェクト。
+関数(function)	function() { ... }	関数。
+シンボル(symbol)	Symbol("foo")	ES6(ES2015) で追加された型で、他の値と重複しないユニークなシンボル値を生成します。
+
+■オブジェクト
+JavaScript はオブジェクト指向というプログラミング上の思想を受け継いでおり、
+ウィンドウや、ドキュメントやフォーム部品などいろいろなものをオブジェクト（物）として扱います。
+オブジェクトには以下のようなものがあります。
+
+□ オブジェクト（Object）
+├□ シンボル（Symbol）
+├□ 数値（Number）
+├□ 文字列（String）
+├□ 真偽値（Boolean）
+├□ 配列（Array）
+├□ マップ（Map）
+├□ セット（Set）
+├□ 数学関数（Math）
+├□ 日付（Date）
+├□ 関数（Function）
+├□ 正規表現（RegExp）
+└□ ウィンドウ（Window）
+　├□ ナビゲーター（Navigator）
+　│├□ プラグイン（Plugin）
+　│└□ MIMEタイプ（MimeType）
+　├□ フレーム（Frame）
+　├□ イベント（Event）
+　├□ ヒストリ（History）
+　├□ ロケーション（Location）
+　├□ スクリーン（Screen）
+　└□ ドキュメント（Document）
+　　├□ レイヤ（Layer）
+　　├□ 画像（Image）
+　　├□ リンク（Link）
+　　├□ アンカー（Anchor）
+　　├□ アプレット（Applet）
+　　├□ フォーム（Form）
+　　│├□ テキスト（Text）
+　　│├□ パスワード（Password）
+　　│├□ ファイルアップロード（File）
+　　│├□ 隠し部品（Hidden）
+　　│├□ テキストエリア（Textarea）
+　　│├□ チェックボックス（Checkbox）
+　　│├□ ラジオ（Radio）
+　　│├□ ボタン（Button）
+　　│├□ サブミットボタン（Submit）
+　　│├□ リセットボタン（Reset）
+　　│└□ セレクト（Select）
+　　│　└□ オプション（Option）
+　　└□ エレメント（Elements）
+　　　└□ スタイル（Style）
+
+■プロパティ
+オブジェクトは、値を参照したり設定するためのプロパティ(属性)を持ちます。
+
+■メソッド
+オブジェクトはまた、動作を指定する際に用いるメソッド(処理)をサポートしています。
+
