@@ -1,0 +1,49 @@
+■複文(ブロック)
+複数の文を { ... } で囲むことにより、ひとつの文として扱うことができます。
+
+■変数・定数宣言
+◆変数宣言(var)
+変数の使用開始を明示的に宣言するには、var を用います。
+
+◆変数宣言(let)
+let で定義した変数は、そのブロックの中だけで有効な局所変数となります。
+これにより、ブロック内で使用する変数が、ブロック外の変数の値を誤って上書きしてしまうリスクを低減することができます。
+※for文 で使用する変数にも let を用いることで、ループ変数をより安全に使用することができます。
+
+◆定数宣言(const)
+定数を定義する const がサポートされました。
+const を用いて定義された定数に値を代入しようとすると、TypeError が発生します。
+
+◆条件分岐（if）
+if (expression) statements1 else statements2
+
+◆条件分岐（switch）
+switch (expression) { case value: statements; ...; default statements; }
+※break は statements の終わりを意味します。書き忘れると、次の case の statements まで実行されます。
+
+◆繰り返し（while）：expression が真である間、statements を繰り返します。
+while (expression) statements
+
+◆繰り返し（do）：expression が真である間、statements を繰り返します。
+do statements while (expression)
+※最初から expression が偽であっても、statements が少なくとも1回は実行される点が while (...) {...} と異なります。
+
+◆繰り返し（for）：最初に expression1 を実行し、次に、statements と expression3 を expression2 が真である間繰り返します。
+for (expression1; expression2; expression3) statements
+
+◆繰り返し（for）：配列のすべての要素に関する処理を行います。
+for (variable in array) statements
+
+◆ループを抜ける
+break
+break は、最も内側の for、while、do ループや、switch 文の case 節を抜けます。
+
+break label
+label は入れ子になったループを一度に抜けたい場合に用います。
+
+◆ループを続ける（continue）
+continue
+ループ内の残りの処理をスキップし、もっとも内側の for, while, do ループの次のループを実行します。
+
+continue label
+label を指定した場合は、ラベルで指定したループの次のループを実行します。
