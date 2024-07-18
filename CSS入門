@@ -25,6 +25,13 @@ CSS は Cascading Style Sheets の略。HTMLで記述された Webページの�
   </body>
 </html>
 
+//上記コードの説明
+・<!DOCTYPE html>  //HTML5文書を宣言しています。
+・<html>  //HTML文書のルート要素です。
+・<head>  //メタデータやタイトル、スタイルシート、スクリプトなどを含む文書の頭部です。
+・<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  //文書の文字エンコーディングを指定しています。この場合、文書がHTML形式であり、UTF-8エンコーディングを使用することを示しています。
+・http-equiv  //「HTTP equivalent」の略で、ここでは「Content-Type」ヘッダーを指定しています。content属性はその値を指定しています。
+
 ◆ <link>を用いた外部CSSファイルで指定する方法
 ⇒<link> タグにより、外部CSSファイルを読み込むことができます。外部CSSファイルを用いることで、複数の HTML文書で共通のCSSを共有することができます。
 
