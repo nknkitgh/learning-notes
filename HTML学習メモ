@@ -64,3 +64,4 @@
 
 画像ファイルをリンクボタンにすることもできます。
   <a href="xx.htm"><img src="xx.gif" width=88 height=31 alt="説明"></a>
+
